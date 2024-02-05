@@ -6,11 +6,8 @@ const generate = async (type: "odd" | "prima" | "triangle") => {
   if (input.value && isNaN(input.value)) return alert("Harus berupa angka");
   if (input.value && input.value < 0) return alert("Harus bilangan Positif");
   try {
-    const res = await $fetch(`/generate?type=${type}`, {
+    const res = await $fetch(`/generate?type=${type}&number=${input.value}`, {
       baseURL: "http://localhost:3333",
-      data: {
-        input: input.value,
-      },
     });
     result.value = res;
   } catch (error) {}
