@@ -8,6 +8,9 @@ const generate = async (type: "odd" | "prima" | "triangle") => {
   try {
     const res = await $fetch(`/generate?type=${type}`, {
       baseURL: "http://localhost:3333",
+      data: {
+        input: input.value,
+      },
     });
     result.value = res;
   } catch (error) {}
