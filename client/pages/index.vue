@@ -31,6 +31,9 @@ const generate = async (type: "odd" | "prima" | "triangle") => {
       </button>
       <button @click="generate('prima')">Generate Bilangan Prima</button>
     </div>
-    <div>Result : {{ result }}</div>
+    <div>Result :</div>
+    <div v-for="(item, index) in result" :key="index">
+        {{  item }}
+    </div>
   </div>
 </template>
