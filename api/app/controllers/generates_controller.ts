@@ -13,10 +13,21 @@ export default class GeneratesController {
       })
     }
 
-    if( type === 'odd') {
-      return Array.from({ length: parseInt(number) + 1 }).map((x,i) => {
-        return i % 2 === 1 && i
-      }).filter(x => x)
+    if (type === 'odd') {
+      return Array.from({ length: parseInt(number) + 1 })
+        .map((x, i) => {
+          return i % 2 === 1 && i
+        })
+        .filter((x) => x)
+    }
+
+    if (type === 'prima') {
+      return Array.from({ length: parseInt(number) + 1 })
+        .map((x, i) => {
+          if( i === 2 || i === 3 || i === 5) return i
+          return i % 2 === 1 && i % 3 !== 0 && i % 4 !== 0 && i % 5 !== 0 && i !== 1 && i
+        })
+        .filter((x) => x)
     }
 
     return 'no result'
